@@ -3,7 +3,7 @@ import csv
 import time
 
 def main():
-	years = [2018]
+	year = 2018
 	days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
 	stations = []
@@ -17,25 +17,25 @@ def main():
 
 	start = time.perf_counter_ns()
 
-	month = 2
+	month = 1
 
 
-	for year in years:
-		for day in range(days[month]):
-			for i in range(len(stations)):			
-				station = stations[i]
-				print("Now Performing " + str(year) + " " + str(month) + " " + str(day + 1) + " Station: " + str(station), end = "\n\n")
 
-				duration = time.perf_counter_ns() - start
-				complete = (i / len(stations) * ((day + 1) / days[month]) * 100)
+	for day in range(days[month - 1]):
+		for i in range(len(stations)):			
+			station = stations[i]
+			print("Now Performing " + str(year) + " " + str(month) + " " + str(day + 1) + " Station: " + str(station), end = "\n\n")
 
-				try:
-					make_temp_map.main(station, year, month, day + 1)
-				except:
-					pass
+			duration = time.perf_counter_ns() - start
+			complete = ((day + 1) / days[month - 1]) + (i / len(stations)) 
 
-				print("{:.5f}".format(complete) + "% Complete", end = '')
-				print(" DURATION: " + str(duration / (1000000000 * 60)) + " minutes")	
+			try:
+				make_temp_map.main(station, year, month, day + 1)
+			except:
+				pass
+
+			print("{:.5f}".format(complete) + "% COMPLETE")
+			print(" DURATION: " + str(duration / (1000000000 * 60)) + " minutes")	
 
 	print("\a")
 
