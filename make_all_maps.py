@@ -17,7 +17,7 @@ def main():
 
 	start = time.perf_counter_ns()
 
-	month = 2
+	month = 1
 
 
 	for year in years:
