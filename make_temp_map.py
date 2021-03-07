@@ -32,7 +32,7 @@ import math
 import numpy as np
 
 
-threshold = 70
+threshold = 80
 
 
 def main(station_id, year, month, date):
