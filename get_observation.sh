@@ -1,0 +1,1 @@
+python get_canadian_weather_observations.py --hourly -o "/root/aiweather/Hourly Data" --date 2019-04 all

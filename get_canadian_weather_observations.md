@@ -90,7 +90,7 @@ Get all the hourly and daily observations for all the British Columbian stations
  python get_canadian_weather_observations.py --hourly --daily --start-date 1980-01 --end-date 1990-01 -o /home/miguel/download BC
 ```
 <br />
-
+/root/aiweather/get_canadian_weather_observations.md
 Display the information for the Bagotville station:
 ```bash
  python get_canadian_weather_observations.py --info YBG
